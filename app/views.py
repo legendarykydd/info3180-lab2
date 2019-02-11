@@ -9,6 +9,16 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash
 
 
+#Date Time function
+import datetime
+
+def format_date_joined():
+    now = datetime.datetime.now() # today's date
+    ## Format the date to return only month and year date
+    return now.strftime("%B, %Y")
+
+
+
 ###
 # Routing for your application.
 ###
@@ -23,6 +33,10 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
+    
+@app.route('/profile/')
+def profile():
+    return render_template("profile.html", join_date= format_date_joined())
 
 
 ###
@@ -56,3 +70,6 @@ def page_not_found(error):
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="8080")
+    
+
+

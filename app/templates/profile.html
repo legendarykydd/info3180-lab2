@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}"
+{% endblock %}
+{% block main %}
+
+        <div class = "info">
+            <img id="pic" src= "{{url_for('static', filename='dead.jpg')}}"></img>
+            <h1>Wade Wilson</h1>
+            <h5>@iambatman</h5>
+            <h5>Kingston, Jamaica</h5>
+            <h5>Joined January, 2018</h5>
+        </div>    
+            <div class= "bio">
+                <p> I am a talented and rich young man who enjoys Web designing and developing. I also partake in photography and video editing.
+                Contact me if you want to do a shoot or need a website done. 
+                </p>
+                <div class = "followers">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>10 </td>
+                                <td> 300 </td>
+                                <td> 150k</td>
+                            </tr>
+                            <tr>
+                                <td>Post </td>
+                                <td> Following </td>
+                                <td> Followers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="button">Follow</button>
+            </div>
+            {% endblock %}
+    
+        
